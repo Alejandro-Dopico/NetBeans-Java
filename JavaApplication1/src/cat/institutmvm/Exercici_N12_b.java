@@ -13,8 +13,8 @@ import java.util.Scanner;
 //Pre: Introdueix un número i
 public class Exercici_N12_b {
     private static final String MSG_1 = "Introduce un número: ";
-    private static final String MSG_2 = "El doble del número és: ";
-    private static final String MSG_3 = "El el triple del número és: ";
+    private static final String MSG_2 = "El doble del número es: ";
+    private static final String MSG_3 = "El triple del número es: ";
     
    public static void main(String[] arg) {
         float num;
