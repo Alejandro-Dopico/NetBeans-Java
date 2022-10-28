@@ -9,8 +9,11 @@ package ImplementacioJava;
  * @author alexd
  */
 public class Exercici_1_nom {
-  public static void main(String[] args) {
-    System.out.println("Alejandro"); 
-    System.out.println("Garcia Dopico");
+    public static void main(String[] args) {
+        String nom="Alejandro ", cognom="Garcia Dopico";
+        System.out.println(nom); 
+        System.out.println(nom + cognom);
+        System.out.println(nom); 
+        System.out.println(cognom);
   }
 }      

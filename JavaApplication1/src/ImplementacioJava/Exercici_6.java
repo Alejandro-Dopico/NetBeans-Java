@@ -4,6 +4,8 @@
  */
 package ImplementacioJava;
 
+import java.util.Scanner;
+
 /*  
     Alejandro
     Garcia Dopico
@@ -13,22 +15,21 @@ package ImplementacioJava;
     Programació  
 */
 
-import java.util.Scanner;
-
-public class Exercici_3f {
-    private static final String MSG_1 = "Introdueix un número: ";
+public class Exercici_6 {
+    private static final String MSG_1 = "Introdueix un any i un mes: ";
     
     public static void main(String[] args) {
-        float num1, num2;        
+        int any, mes;        
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
-        num1 = sc.nextFloat();
-        num2 = sc.nextFloat();
-            if(num1 / num2 > 15){
-                System.out.println("El número es més gran que 15");
-            }
-            else {
-                System.out.println("El número es menor que 15");
-            }           
-  }
-}    
+        any = sc.nextInt();
+        mes = sc.nextInt();
+        if (mes % 2 == 0)
+            if (mes == 2)
+                
+        }
+        else {
+            System.out.println("El año no es bisiesto");
+        }
+    }
+}

@@ -4,20 +4,21 @@
  */
 package ImplementacioJava;
 
-// Alejandro Garcia Dopico
+/*  
+    Alejandro
+    Garcia Dopico
+    INS Manuel Vázquez Montalbán
+    27/10/22
+    Disseny d'Aplicació Web (DAW)
+    Programació  
+*/
 
 import java.util.Scanner;
 
 public class Exercici_3h {
     private static final String MSG_1 = "Introdueix un número: ";
+    
     public static void main(String[] args) {
-        System.out.println("Nom: Alejandro"); 
-        System.out.println("Cognoms: Garcia Dopico");
-        System.out.println("INS Manuel Vázquez Montalbán");
-        System.out.println("Data d'edició: 27/10/22");
-        System.out.println("Nom del Cicle Formatiu: Disseny d'Aplicació Web (DAW)");
-        System.out.println("Nom del mòdul: Programació");
-        System.out.print("\n");
         float num1;        
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);

@@ -10,10 +10,10 @@ package ImplementacioJava;
  */
 public class Exercici_1_triangleRectangle {
     public static void main(String[] args) {
-    String name = "*";
+    String name = "* ";
     for(int i = 0; i < 10; i++) {
         System.out.println(name);
-        name= name + "*";      
+        name= name + "* ";      
     }
   }
 }
