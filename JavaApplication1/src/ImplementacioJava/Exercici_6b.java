@@ -27,16 +27,16 @@ public class Exercici_6b {
         if (mes % 2 == 0){
             if (mes == 2){
                 if (any % 4 == 0){
-                    System.out.println(case: 2);
+                    System.out.println(case: 2)
                 }
                 else
-                    System.out.println(case: 1);
+                    System.out.println(case: 1)
             }
             else
-                System.out.println(case: 3);
+                System.out.println(case: 3)
         }
         else {
-            System.out.println(case: 4);
+            System.out.println(case: 4)
         }
         switch (mes) {
             case 1:
@@ -53,4 +53,5 @@ public class Exercici_6b {
                 break;
         }
 }
+}    
                

@@ -13,15 +13,14 @@ package ImplementacioJava;
     Programació  
 */
 
-public class Exercici_7a {
+public class Exercici_7d {
     
     public static void main(String[] args) {
-        int i = 0;
+        int i = 100;
         
-        while (i < 10) {  
-            i++;
+        while (i > 0) {  
+            i--;
             System.out.println(i);
         }
     }
 }
-
