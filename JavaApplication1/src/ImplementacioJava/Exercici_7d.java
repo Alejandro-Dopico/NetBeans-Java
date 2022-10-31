@@ -16,7 +16,7 @@ package ImplementacioJava;
 public class Exercici_7d {
     
     public static void main(String[] args) {
-        int i = 100;
+        int i = 101;
         
         while (i > 0) {  
             i--;
