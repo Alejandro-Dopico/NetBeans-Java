@@ -15,17 +15,20 @@ import java.util.Scanner;
     Programació  
 */
 
-public class Exercici_8a {
-    private static final String MSG_1 = "Introdueix un número enter: ";
+public class Exercici_9 {
+    private static final String MSG_1 = "Introdueix números i acaba amb 0: ";
+    private static final String MSG_2 = "La mitjana dels números introduïts es: ";
 
     public static void main(String[] args) {   
-        int num;
+        int num, suma = 0, quantitat = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
         num = sc.nextInt();
         while(num != 0) {
+            quantitat = quantitat + 1;
+            suma = suma + num;
             num = sc.nextInt();
-            
-    }
+        }
+        System.out.println(MSG_2 + (suma / quantitat));
 }
 }

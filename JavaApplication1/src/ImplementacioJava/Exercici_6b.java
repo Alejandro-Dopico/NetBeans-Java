@@ -16,40 +16,42 @@ import java.util.Scanner;
 */
 
 public class Exercici_6b {
-    private static final String MSG_1 = "Introdueix el mes: ";
+    private static final String MSG_1 = "Introdueix un any i un mes: ";
 
     public static void main(String[] args) {       
-        int mes, any;    
+        int mes, any, resultatCase;    
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
-        mes = sc.nextInt();
         any = sc.nextInt();
+        mes = sc.nextInt();
+        
         if (mes % 2 == 0){
             if (mes == 2){
                 if (any % 4 == 0){
-                    System.out.println(case: 2)
+                    resultatCase = 2;
                 }
                 else
-                    System.out.println(case: 1)
+                    resultatCase = 1;
             }
             else
-                System.out.println(case: 3)
+                resultatCase = 3;
         }
         else {
-            System.out.println(case: 4)
+            resultatCase = 4;
         }
-        switch (mes) {
+
+        switch (resultatCase) {       
             case 1:
-                System.out.println("28");
+                System.out.println("28 dies");
                 break;
             case 2:
-                System.out.println("29");
+                System.out.println("29 dias");
                 break;
             case 3:
-                System.out.println("30");
+                System.out.println("30 dias");
                 break;
             case 4:
-                System.out.println("31");
+                System.out.println("31 dias");
                 break;
         }
 }
