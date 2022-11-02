@@ -8,6 +8,8 @@ package ImplementacioJava;
  *
  * @author alexd
  */
+
+//Pre: Mostrarem un triangle, amb asterisc.
 public class Exercici_1_triangleRectangle {
     public static void main(String[] args) {
     String name = "* ";
@@ -17,3 +19,4 @@ public class Exercici_1_triangleRectangle {
     }
   }
 }
+//Post: Mostra un triangle rectangle.

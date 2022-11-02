@@ -8,6 +8,8 @@ package ImplementacioJava;
  *
  * @author alexd
  */
+
+//Pre: Farem un cuadrat amb asterisc
 public class Exercici_1_quadrat {
     public static void main(String[] args) {
     for(int i = 0; i < 10; i++) {
@@ -15,3 +17,4 @@ public class Exercici_1_quadrat {
     }
   }
 }
+//Post: Hem mostrat un cuadrat amb 10 lineas de asterisc.

@@ -8,6 +8,8 @@ package ImplementacioJava;
  *
  * @author alexd
  */
+
+//Pre: Mostrarem el nom per pantalla
 public class Exercici_1_nom {
     public static void main(String[] args) {
         String nom="Alejandro ", cognom="Garcia Dopico";
@@ -17,3 +19,4 @@ public class Exercici_1_nom {
         System.out.println(cognom);
   }
 }      
+//Post: Hem mostrat el nom.
