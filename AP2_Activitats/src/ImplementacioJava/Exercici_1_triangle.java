@@ -8,6 +8,8 @@ package ImplementacioJava;
  *
  * @author alexd
  */
+
+//Pre: Mostrarem un triangle, amb asterisc.
 public class Exercici_1_triangle {
     public static void main(String[] args) {
     int n = 10;
@@ -22,4 +24,5 @@ public class Exercici_1_triangle {
         }
     }
 }
+//Post: Hem mostrat per pantalla un traingle equilater
 
