@@ -7,7 +7,7 @@ package cat.institutmvm;
 import java.util.Scanner;
 
 //Pre: Introdueix un número y especifica si es entre 5 y 50.
-public class Exercici_N9 {
+public class Exercici9 {
     private static final String MSG_1 ="Introdueix un número: ";
             
     public static void main(String[] args) {

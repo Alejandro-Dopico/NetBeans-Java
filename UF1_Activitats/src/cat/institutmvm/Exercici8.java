@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author alumne_1r
  */
-public class Exercici_N8 {
+public class Exercici8 {
         private static final String MSG_1 = "Introdueix un número: ";
         
         public static void main(String[] args) {

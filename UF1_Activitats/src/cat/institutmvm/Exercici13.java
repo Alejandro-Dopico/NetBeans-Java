@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author alumne_1r
  */
-public class Exercici_N13 {
+public class Exercici13 {
         private static final String MSG_1 = "Introduce 5 números";
         private static final String MSG_2 = "Esta es la media: ";
                 

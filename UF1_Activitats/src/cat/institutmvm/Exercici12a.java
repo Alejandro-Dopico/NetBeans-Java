@@ -6,7 +6,7 @@ package cat.institutmvm;
 
 import java.util.Scanner;
 
-public class Exercici_N12_a {
+public class Exercici12a {
     private static final String MSG_1="Introduce la base ";
     private static final String MSG_2="Introduce la altura ";
     private static final String MSG_3="El área és ";

@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author alumne_1r
  */
 //Pre: Introdueix un número i
-public class Exercici_N12_b {
+public class Exercici12b {
     private static final String MSG_1 = "Introduce un número: ";
     private static final String MSG_2 = "El doble del número és: ";
     private static final String MSG_3 = "El el triple del número és: ";

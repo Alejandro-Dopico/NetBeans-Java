@@ -8,6 +8,6 @@ package cat.institutmvm;
  *
  * @author alumne_1r
  */
-public class Exercici_N14 {
+public class Exercici14 {
     
 }

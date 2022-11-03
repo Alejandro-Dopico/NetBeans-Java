@@ -7,7 +7,7 @@ package cat.institutmvm;
 import java.util.Scanner;
 
 
-public class Exercici_N12_c {
+public class Exercici12c {
     private static final String MSG_1 = "Introduce 3 números:";
     private static final String MSG_2 = "La suma de los dos primeros es más grande";
     private static final String MSG_3 = "La suma de los dos primeros es más pequeño";
