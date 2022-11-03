@@ -15,22 +15,26 @@ import java.util.Scanner;
     Programació  
 */
 
-//Pre: Introduïm uns valors i determinem la mitjana aritmetica.
-public class Exercici_9 {
-    private static final String MSG_1 = "Introdueix números i acaba amb 0: ";
-    private static final String MSG_2 = "La mitjana dels números introduïts es: ";
+//Pre: Farem un programa que introduit un nombre, fara la sequencia per aproximarse aquet valor.
+public class Extra_Exercici_11 {
+    private static final String MSG_1 = "Introdueix un nombre: ";
 
     public static void main(String[] args) {   
-        int num, suma = 0, quantitat = 0;
+        int num, cont = 0, sum= 0;
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
         num = sc.nextInt();
-        while(num != 0) {
-            quantitat = quantitat + 1;
-            suma = suma + num;
-            num = sc.nextInt();
+        
+        while(true) {
+            if(sum+cont > num){
+                break;
+            }
+            cont++;
+            sum += cont;
+            System.out.print(cont + ",");
+
         }
-        System.out.println(MSG_2 + (suma / quantitat));
+        System.out.println("\nSuma total: " + sum);
 }
 }
-//Post: Sumem tots els valors introduïts i fem la mitjana del número de valors.
+//Post: Ens donarà la suma de la sequencia ordenada, mes proxima al valor.

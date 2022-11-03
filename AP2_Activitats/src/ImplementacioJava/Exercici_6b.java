@@ -15,14 +15,17 @@ import java.util.Scanner;
     Programació  
 */
 
+//Pre: Introduïm un any i un mes, i amb aquest valors veurem quants dies te el mes
 public class Exercici_6b {
-    private static final String MSG_1 = "Introdueix un any i un mes: ";
+    private static final String MSG_1 = "Introdueix un any: ";
+    private static final String MSG_2 = "Introdueix un mes: ";
 
     public static void main(String[] args) {       
         int mes, any, resultatCase;    
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
         any = sc.nextInt();
+        System.out.println(MSG_2);
         mes = sc.nextInt();
         
         if (mes % 2 == 0){
@@ -42,18 +45,19 @@ public class Exercici_6b {
 
         switch (resultatCase) {       
             case 1:
-                System.out.println("28 dies");
+                System.out.println("\n" + "El mes te 28 dies");
                 break;
             case 2:
-                System.out.println("29 dias");
+                System.out.println("\n" + "El mes te 29 dias");
                 break;
             case 3:
-                System.out.println("30 dias");
+                System.out.println("\n" + "El mes te 30 dias");
                 break;
             case 4:
-                System.out.println("31 dias");
+                System.out.println("\n" + "El mes te 31 dias");
                 break;
         }
 }
 }    
+//Post: Fent l'estructura Switch, el resultat de la lògica del If-else, dona coma a resultat una variable del switch.
                
