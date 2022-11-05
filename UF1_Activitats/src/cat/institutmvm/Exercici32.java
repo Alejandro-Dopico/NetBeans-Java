@@ -67,7 +67,7 @@ public class Exercici32 {
             }
         }
         while(!valorCorrecte);
-        do{
+        //do{
             switch(categoria) {
                 case 1:
                     if(categoria <= 6 && categoria >= 1){
@@ -107,8 +107,7 @@ public class Exercici32 {
                 default:
                     System.out.println("Error");
         /*while(categoria <= 6 && categoria >= 1){
-        }
-
+        
             if(preufinal >= 100) {
                 System.out.println("\nEl cost d'enviament es 3 €\n");
                 System.out.println("El total amb l'enviament es: " + (preufinal + 3)+"€");       
@@ -125,4 +124,4 @@ public class Exercici32 {
         }
     }
 }
-}
+
