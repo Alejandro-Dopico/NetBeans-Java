@@ -67,7 +67,9 @@ public class Exercici32 {
             }
         }
         while(!valorCorrecte);
-        do{
+        //do{
+           // if()
+        //}
             switch(categoria) {
                 case 1:
                     if(categoria <= 6 && categoria >= 1){
@@ -106,22 +108,20 @@ public class Exercici32 {
                     break;  
                 default:
                     System.out.println("Error");
-        while(categoria <= 6 && categoria >= 1){
-        }
+            }
 
             if(preufinal >= 100) {
-                System.out.println("\nEl cost d'enviament es 3 €\n");
+                System.out.println("\nEl cost d'enviament es 3€\n");
                 System.out.println("El total amb l'enviament es: " + (preufinal + 3)+"€");       
             }
             else if (preufinal >= 500 && preufinal <= 100) {
-                System.out.println("\nEl cost d'enviament es 20 €\n");
+                System.out.println("\nEl cost d'enviament es 20€\n");
                 System.out.println("El total amb l'enviament es: " + (preufinal + 20)+"€");
             }
             else {
-                System.out.println("\nEl cost d'enviament es 50 €\n");
+                System.out.println("\nEl cost d'enviament es 50€\n");
                 System.out.println("El total amb l'enviament es: " + (preufinal + 50)+"€");
             }
         }
     }
-}
-}
+

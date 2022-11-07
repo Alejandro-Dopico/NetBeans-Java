@@ -20,18 +20,18 @@ public class Extra_Exercici_11 {
     private static final String MSG_1 = "Introdueix un nombre: ";
 
     public static void main(String[] args) {   
-        int num, cont = 0, sum= 0;
+        int num, count = 0, sum= 0;
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
         num = sc.nextInt();
         
         while(true) {
-            if(sum+cont > num){
+            if(sum+count > num){
                 break;
             }
-            cont++;
-            sum += cont;
-            System.out.print(cont + ",");
+            count++;
+            sum += count;
+            System.out.print(count + ",");
 
         }
         System.out.println("\nSuma total: " + sum);

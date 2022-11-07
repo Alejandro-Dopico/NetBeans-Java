@@ -15,9 +15,10 @@ import java.util.Scanner;
     Programació  
 */
 
+//Pre: Calcularem el número de xifres que te un valor.
 public class Exercici31 {
     private static final String MSG_1 = "Indrodueix un nombre: ";
-    private static final String MSG_2 = "Error, Torna a introduir un nombre: ";
+    private static final String MSG_2 = "Error, Torna a introduïr un nombre: ";
     
     public static void main(String[] args){
         int num, res = 0;
@@ -41,3 +42,4 @@ public class Exercici31 {
         System.out.println(res);
     }
 }
+//Post: ens donara el número de xifres que té el valor introduït.
