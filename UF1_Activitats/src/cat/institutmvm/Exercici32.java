@@ -58,16 +58,17 @@ public class Exercici32 {
         do{
             System.out.println("\n" + MSG_3);  
             valorCorrecte = sc.hasNextInt();
-            if(valorCorrecte){
-                categoria = sc.nextInt();
-            }
+            if(valorCorrecte && categoria <= 6 && categoria >=1){
+                    categoria = sc.nextInt();
+                }
             else{
                 sc.next();
                 System.out.println(MSG_10);
             }
         }
         while(!valorCorrecte);
-        //do{
+        do{
+            if(categoria <= 6 && categoria >=1){
             switch(categoria) {
                 case 1:
                     if(categoria <= 6 && categoria >= 1){
@@ -106,22 +107,27 @@ public class Exercici32 {
                     break;  
                 default:
                     System.out.println("Error");
-        /*while(categoria <= 6 && categoria >= 1){
-        
-            if(preufinal >= 100) {
-                System.out.println("\nEl cost d'enviament es 3 €\n");
-                System.out.println("El total amb l'enviament es: " + (preufinal + 3)+"€");       
             }
-            else if (preufinal >= 500 && preufinal <= 100) {
-                System.out.println("\nEl cost d'enviament es 20 €\n");
-                System.out.println("El total amb l'enviament es: " + (preufinal + 20)+"€");
+        }
+            else{
+                sc.next();
+                System.out.println(MSG_10);
             }
-            else {
-                System.out.println("\nEl cost d'enviament es 50 €\n");
-                System.out.println("El total amb l'enviament es: " + (preufinal + 50)+"€");
-            }
-*/
+        }
+        while(!valorCorrecte);
+        if(preufinal >= 100) {
+            System.out.println("\nEl cost d'enviament es 3 €\n");
+            System.out.println("El total amb l'enviament es: " + (preufinal + 3)+"€");       
+        }
+        else if (preufinal >= 500 && preufinal <= 100) {
+            System.out.println("\nEl cost d'enviament es 20 €\n");
+            System.out.println("El total amb l'enviament es: " + (preufinal + 20)+"€");
+        }
+        else {
+            System.out.println("\nEl cost d'enviament es 50 €\n");
+            System.out.println("El total amb l'enviament es: " + (preufinal + 50)+"€");
         }
     }
 }
+
 
