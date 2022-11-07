@@ -15,46 +15,36 @@ import java.util.Scanner;
     Programació  
 */
 
-//Pre: Almacena 20 valores enteros y clasificalos
-public class Exercici26 {
-
-    private static final String MSG_1 = "Introdueix 5 números: ";
-    private static final String MSG_2 = "Aquest es el resultat: ";
+//Pre: Introduce 20 valores y devuelve la posicion impar
+public class Exercici27 {
+    private static final String MSG_1 = "Introdueix 20 números: ";
+    private static final String MSG_2 = "Aquestes son les posicions senars: ";
     private static final String MSG_3 = "Error, torna a introduïr: ";
-
+    
     public static void main(String[] args) {
-        int[] arrayEnters = new int[5];
+        int[] arrayEnters = new int[20];
         int i;
         boolean valorCorrecte;
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
-
         for (i = 0; i < arrayEnters.length; i++) {
             do {
                 valorCorrecte = sc.hasNextInt();
                 if (valorCorrecte) {
                     arrayEnters[i] = sc.nextInt();
-                    if (arrayEnters[i] % 5 == 0) {
-                        arrayEnters[i] = arrayEnters[i] + 3;
-                    } else {
-                        if (arrayEnters[i] % 3 == 0) {
-                            arrayEnters[i] = arrayEnters[i] - 2;
-                        } else {
-                            arrayEnters[i] = arrayEnters[i] + 0;
-                        }
-                    }
-                }
-                else{
+                } else {
                     sc.next();
                     System.out.println("\n" + MSG_3);
                 }
-            }while (!valorCorrecte);
+            } while (!valorCorrecte);
         }
+
         System.out.println(MSG_2 + "\n");
-        for (i = 0; i < arrayEnters.length; i++) {
+        for (i = 0; i < arrayEnters.length;) {
             System.out.println(arrayEnters[i]);
+            i = i + 2;
         }
     }
 }
-
-//Post: Tendremos los valores almacenados segun si es divisible entre 5 o 3
+   
+//Post: Et donara les posiciones senar de la "i" del Array.
