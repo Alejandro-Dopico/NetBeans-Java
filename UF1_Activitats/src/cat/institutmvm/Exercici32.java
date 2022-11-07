@@ -67,8 +67,14 @@ public class Exercici32 {
             }
         }
         while(!valorCorrecte);
+<<<<<<< HEAD
         do{
             if(categoria <= 6 && categoria >=1){
+=======
+        //do{
+           // if()
+        //}
+>>>>>>> c73660dccd0fc095c83a59702b208fcc0fc5b614
             switch(categoria) {
                 case 1:
                     if(categoria <= 6 && categoria >= 1){
@@ -108,10 +114,25 @@ public class Exercici32 {
                 default:
                     System.out.println("Error");
             }
+<<<<<<< HEAD
         }
             else{
                 sc.next();
                 System.out.println(MSG_10);
+=======
+
+            if(preufinal >= 100) {
+                System.out.println("\nEl cost d'enviament es 3€\n");
+                System.out.println("El total amb l'enviament es: " + (preufinal + 3)+"€");       
+            }
+            else if (preufinal >= 500 && preufinal <= 100) {
+                System.out.println("\nEl cost d'enviament es 20€\n");
+                System.out.println("El total amb l'enviament es: " + (preufinal + 20)+"€");
+            }
+            else {
+                System.out.println("\nEl cost d'enviament es 50€\n");
+                System.out.println("El total amb l'enviament es: " + (preufinal + 50)+"€");
+>>>>>>> c73660dccd0fc095c83a59702b208fcc0fc5b614
             }
         }
         while(!valorCorrecte);
@@ -128,6 +149,9 @@ public class Exercici32 {
             System.out.println("El total amb l'enviament es: " + (preufinal + 50)+"€");
         }
     }
+<<<<<<< HEAD
 }
 
+=======
+>>>>>>> c73660dccd0fc095c83a59702b208fcc0fc5b614
 
