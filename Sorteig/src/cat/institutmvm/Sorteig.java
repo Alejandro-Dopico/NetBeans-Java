@@ -25,8 +25,9 @@ public class Sorteig {
     private static final String MSG_5 = "Introdueix el número de telefon: ";
     private static final String MSG_6 = "Error en dades";
     private static final String MSG_7 = "Programa finalitzat per error en dades.";
-    private static final String MSG_8 = "Programa finalitzat per error en dades.";
+    private static final String MSG_8 = "ID    EDAT   TIPUS   IMPORT   TELÈFON";
     private static final String MSG_20 = "A continuació et demanarem les teves dades i les ompliras per teclat";
+    private static final String MSG_9 = "Lliure";
     private static final int MAXID = 999;
     private static final int MINID = 111;
     private static final int MAXEDAT = 120;
@@ -38,7 +39,7 @@ public class Sorteig {
 
     public static void main(String[] args) {
 
-        int id = 0, edat = 0, tipus, compra, telefon, i = 0;
+        int id = 0, edat = 0, tipus, compra, telefon, i = 0, tipus1;
         boolean valorCorrecte = false, exit = false;
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_20);
@@ -92,34 +93,41 @@ public class Sorteig {
             } else {
 
                 exit = false;
-                do {
-                    System.out.println(MSG_3);
-                    tipus = sc.nextInt();
-                    switch (tipus) {
+                System.out.println(MSG_3);
+                do {                                      
+                    valorCorrecte = sc.hasNextInt();
+                    if(valorCorrecte){
+                        tipus = sc.nextInt();
+                        switch (tipus) {
 
-                        case 0:
-                            System.out.println("Venda lliure (0)");
-                            exit = true;
-                            break;
-                        case 1:
-                            System.out.println("Pensionista (1)");
-                            exit = true;
-                            break;
-                        case 2:
-                            System.out.println("Carnet Jove (2)");
-                            exit = true;
-                            break;
-                        case 3:
-                            System.out.println("Soci (3)");
-                            exit = true;
-                            break;
-                        default:
-                            i++;
-                            System.out.println(MSG_6);
-                            break; 
-                        }
-                        if (i == 3) {
-                            exit = true;
+                            case 0:
+                                System.out.println("Venda lliure (0)");                                
+                                exit = true;
+                                break;
+                            case 1:
+                                System.out.println("Pensionista (1)");
+                                exit = true;
+                                break;
+                            case 2:
+                                System.out.println("Carnet Jove (2)");
+                                exit = true;
+                                break;
+                            case 3:
+                                System.out.println("Soci (3)");
+                                exit = true;
+                                break;
+                            default:
+                                i++;
+                                System.out.println(MSG_6);
+                                break; 
+                            }
+                    }else {
+                        sc.next();
+                        System.out.println(MSG_6);
+                        i++;
+                    }
+                    if (i == 3) {
+                        exit = true;
                     }
                 } while (exit != true);
                 if (i == 3) {
@@ -127,7 +135,7 @@ public class Sorteig {
                 } else {
                     i = 0;
                     exit = false;
-                    System.out.println(MSG_4);
+                    System.out.println("\n" + MSG_4);
                     do {
                         valorCorrecte = sc.hasNextInt();
                         if (valorCorrecte) {
@@ -150,11 +158,10 @@ public class Sorteig {
                     if (i == 3) {
                         System.out.println(MSG_7);
                     } else {
-                        System.out.println(MSG_3);
+                        System.out.println("\n" + MSG_5);
                     }
                     i = 0;
                     exit = false;
-                    System.out.println(MSG_5);
                     do {
                         valorCorrecte = sc.hasNextInt();
                         if (valorCorrecte) {
@@ -177,11 +184,12 @@ public class Sorteig {
                     if (i == 3) {
                         System.out.println(MSG_7);
                     } else {
-                        System.out.println(MSG_8);
+                        System.out.println("\n" + MSG_8);
+                        System.out.println(id + "   " + edat);
                     }               
                 }
             }
-        }
+        }       
     }
 }
     
