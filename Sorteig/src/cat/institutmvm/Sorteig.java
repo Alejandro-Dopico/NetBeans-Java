@@ -27,7 +27,10 @@ public class Sorteig {
     private static final String MSG_7 = "Programa finalitzat per error en dades.";
     private static final String MSG_8 = "ID    EDAT   TIPUS   IMPORT   TELÈFON";
     private static final String MSG_20 = "A continuació et demanarem les teves dades i les ompliras per teclat";
-    private static final String MSG_9 = "Lliure";
+    private static final String TYPE_0 = "Venda Lliure";
+    private static final String TYPE_1 = "Pensionista";
+    private static final String TYPE_2 = "Carnet Jove";
+    private static final String TYPE_3 = "Soci";
     private static final int MAXID = 999;
     private static final int MINID = 111;
     private static final int MAXEDAT = 120;
@@ -39,8 +42,9 @@ public class Sorteig {
 
     public static void main(String[] args) {
 
-        int id = 0, edat = 0, tipus, compra, telefon, i = 0, tipus1;
+        int id = 0, edat = 0, tipus, compra, telefon, i = 0;
         boolean valorCorrecte = false, exit = false;
+        String out = "";
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_20);
         do {
@@ -101,19 +105,23 @@ public class Sorteig {
                         switch (tipus) {
 
                             case 0:
-                                System.out.println("Venda lliure (0)");                                
+                                System.out.println("Venda lliure (0)");
+                                out = TYPE_0;                                
                                 exit = true;
                                 break;
                             case 1:
                                 System.out.println("Pensionista (1)");
+                                out = TYPE_1; 
                                 exit = true;
                                 break;
                             case 2:
                                 System.out.println("Carnet Jove (2)");
+                                out = TYPE_2; 
                                 exit = true;
                                 break;
                             case 3:
                                 System.out.println("Soci (3)");
+                                out = TYPE_3; 
                                 exit = true;
                                 break;
                             default:
@@ -185,7 +193,7 @@ public class Sorteig {
                         System.out.println(MSG_7);
                     } else {
                         System.out.println("\n" + MSG_8);
-                        System.out.println(id + "   " + edat);
+                        System.out.println(id + "   " + edat + "     " + out + "    " + compra + "    " + telefon);
                     }               
                 }
             }
