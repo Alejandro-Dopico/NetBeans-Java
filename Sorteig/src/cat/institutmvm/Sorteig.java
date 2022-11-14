@@ -39,16 +39,17 @@ public class Sorteig {
     private static final int MINCOMPRA = 0;
     private static final int MAXTLF = 999999999;
     private static final int MINTLF = 111111111;
+    private static final int TLF = 9;
     public static final String ANSI_BLUE = "\u001B[34m";
 
     public static void main(String[] args) {
 
-        int id = 0, edat = 0, tipus, compra = 0, telefon = 0, i = 0;
+        int id = 0, edat = 0, tipus, tlf = 0, res = 0, compra = 0, telefon = 0, i = 0;
         boolean valorCorrecte = false, exit = false;
         String out = "";
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_20);
-        do {
+        do { //Per cada variable, utilitzarem un do/while. Així verificarem si el resultat es correcte
             System.out.println(MSG_1);
             valorCorrecte = sc.hasNextInt();
             if (valorCorrecte) {
@@ -67,13 +68,13 @@ public class Sorteig {
             if (i == 3) {
                 exit = true;
             }
-        } while (exit != true);
-        if (i == 3) {
+        } while (exit != true); //Una vegada la i arribi a 3 el resultat sigui correcte, sortirem del bucle.
+        if (i == 3) { //Sortirem del bucle si i val 3 el programa finalitzara.
             System.out.println(MSG_7);
-        } else {
+        } else { //En el cas contrari continuara el programa a partir d'un "else".
             exit = false;
-            i = 0;
-            do {
+            i = 0; //Aquí reiniciem la variable i, podriem deixarla tal cual, pero volem tenir 3 intents per cada iteració.
+            do { //Repetim amb la mateix estructura les altres variables.
                 System.out.println(MSG_2);
                 valorCorrecte = sc.hasNextInt();
                 if (valorCorrecte) {
@@ -103,7 +104,7 @@ public class Sorteig {
                     valorCorrecte = sc.hasNextInt();
                     if(valorCorrecte){
                         tipus = sc.nextInt();
-                        switch (tipus) {
+                        switch (tipus) { //Con el switch case almacenaremos el resultado en la variable out.
 
                             case 0:
                                 System.out.println("Venda lliure (0)");
@@ -168,15 +169,22 @@ public class Sorteig {
                         System.out.println(MSG_7);
                     } else {
                         System.out.println("\n" + MSG_5);
-                    }
-                    i = 0;
+                        i = 0;
+                                       
                     exit = false;
                     do {
+                        telefon = 0;
+                        res = 0;
                         valorCorrecte = sc.hasNextInt();
                         if (valorCorrecte) {
                             telefon = sc.nextInt();
-                            if (telefon >= MINTLF && telefon <= MAXTLF) {
-                                exit = true;
+                            tlf = tlf + telefon;
+                            while(telefon != 0){    
+                                telefon = (telefon / 10);
+                                res = res + 1;
+                            } 
+                            if (res == TLF) {
+                                exit = true; 
                             } else {
                                 System.out.println(MSG_6);
                                 i++;
@@ -194,11 +202,12 @@ public class Sorteig {
                         System.out.println(MSG_7);
                     } else {
                         System.out.println("\n" + MSG_8);
-                        System.out.println(ANSI_BLUE + id + "   " + edat + "    " + out + "    " + compra + "       " + telefon + ANSI_BLUE);
+                        System.out.println(ANSI_BLUE + id + "   " + edat + "    " + out + "    " + compra + "       " + tlf + ANSI_BLUE);
                     }               
                 }
             }
         }       
     }
+}
 }
 //Post: Printarem el resultat emmagatzemat, a més amb color blau. Si hem introduit malament 3 vegadas, el programa es finalitzarà.   
