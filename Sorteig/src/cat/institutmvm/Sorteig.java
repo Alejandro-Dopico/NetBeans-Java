@@ -37,8 +37,6 @@ public class Sorteig {
     private static final int MINEDAT = 14;
     private static final int MAXCOMPRA = 1000;
     private static final int MINCOMPRA = 0;
-    private static final int MAXTLF = 999999999;
-    private static final int MINTLF = 111111111;
     private static final int TLF = 9;
     public static final String ANSI_BLUE = "\u001B[34m";
 
@@ -100,38 +98,38 @@ public class Sorteig {
 
                 exit = false;
                 System.out.println(MSG_3);
-                do {                                      
+                do {
                     valorCorrecte = sc.hasNextInt();
-                    if(valorCorrecte){
+                    if (valorCorrecte) {
                         tipus = sc.nextInt();
-                        switch (tipus) { //Con el switch case almacenaremos el resultado en la variable out.
+                        switch (tipus) { //Amb el switch case emmagatzarem el resultat de la variable out.
 
                             case 0:
                                 System.out.println("Venda lliure (0)");
-                                out = TYPE_0;                                
+                                out = TYPE_0;
                                 exit = true;
                                 break;
                             case 1:
                                 System.out.println("Pensionista (1)");
-                                out = TYPE_1; 
+                                out = TYPE_1;
                                 exit = true;
                                 break;
                             case 2:
                                 System.out.println("Carnet Jove (2)");
-                                out = TYPE_2; 
+                                out = TYPE_2;
                                 exit = true;
                                 break;
                             case 3:
                                 System.out.println("Soci (3)");
-                                out = TYPE_3; 
+                                out = TYPE_3;
                                 exit = true;
                                 break;
                             default:
                                 i++;
                                 System.out.println(MSG_6);
-                                break; 
-                            }
-                    }else {
+                                break;
+                        }
+                    } else {
                         sc.next();
                         System.out.println(MSG_6);
                         i++;
@@ -142,7 +140,7 @@ public class Sorteig {
                 } while (exit != true);
                 if (i == 3) {
                     System.out.println(MSG_7);
-                } else {
+                } else { //Repetim amb la mateix estructura les altres variables.
                     i = 0;
                     exit = false;
                     System.out.println("\n" + MSG_4);
@@ -168,46 +166,46 @@ public class Sorteig {
                     if (i == 3) {
                         System.out.println(MSG_7);
                     } else {
-                        System.out.println("\n" + MSG_5);
                         i = 0;
-                                       
-                    exit = false;
-                    do {
-                        telefon = 0;
-                        res = 0;
-                        valorCorrecte = sc.hasNextInt();
-                        if (valorCorrecte) {
-                            telefon = sc.nextInt();
-                            tlf = tlf + telefon;
-                            while(telefon != 0){    
-                                telefon = (telefon / 10);
-                                res = res + 1;
-                            } 
-                            if (res == TLF) {
-                                exit = true; 
+
+                        exit = false;
+                        do { //Repetim amb la mateix estructura les altres variables, amb un while més.
+                            System.out.println("\n" + MSG_5);
+                            tlf = 0;
+                            res = 0;
+                            valorCorrecte = sc.hasNextInt();
+                            if (valorCorrecte) {
+                                telefon = sc.nextInt();
+                                tlf = tlf + telefon;
+                                while (telefon != 0) { //Aquí verificarem el número de xifres que te el valor.   
+                                    telefon = (telefon / 10); //Dividem entre 10 per saber el número de xifres.
+                                    res = res + 1;
+                                }
+                                if (res == TLF) { //Si el número de xifres es 9, s'emmagatzera.
+                                    exit = true;
+                                } else {
+                                    System.out.println(MSG_6);
+                                    i++;
+                                }
                             } else {
+                                sc.next();
                                 System.out.println(MSG_6);
                                 i++;
                             }
-                        } else {
-                            sc.next();
-                            System.out.println(MSG_6);
-                            i++;
-                        }
+                            if (i == 3) {
+                                exit = true;
+                            }
+                        } while (exit != true);
                         if (i == 3) {
-                            exit = true;
+                            System.out.println(MSG_7);
+                        } else { //Printarem els resultats i els valors de color blau.
+                            System.out.println("\n" + MSG_8);
+                            System.out.println(ANSI_BLUE + id + "   " + edat + "    " + out + "    " + compra + "       " + tlf + ANSI_BLUE);
                         }
-                    } while (exit != true);
-                    if (i == 3) {
-                        System.out.println(MSG_7);
-                    } else {
-                        System.out.println("\n" + MSG_8);
-                        System.out.println(ANSI_BLUE + id + "   " + edat + "    " + out + "    " + compra + "       " + tlf + ANSI_BLUE);
-                    }               
+                    }
                 }
             }
-        }       
+        }
     }
-}
 }
 //Post: Printarem el resultat emmagatzemat, a més amb color blau. Si hem introduit malament 3 vegadas, el programa es finalitzarà.   
