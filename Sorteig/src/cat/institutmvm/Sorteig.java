@@ -25,7 +25,7 @@ public class Sorteig {
     private static final String MSG_5 = "Introdueix el número de telefon: ";
     private static final String MSG_6 = "Error en dades";
     private static final String MSG_7 = "Programa finalitzat per error en dades.";
-    private static final String MSG_8 = "ID    EDAT   TIPUS   IMPORT   TELÈFON";
+    private static final String MSG_8 = "ID    EDAT   TIPUS         IMPORT   TELÈFON";
     private static final String MSG_20 = "A continuació et demanarem les teves dades i les ompliras per teclat";
     private static final String TYPE_0 = "Venda Lliure";
     private static final String TYPE_1 = "Pensionista";
@@ -42,7 +42,7 @@ public class Sorteig {
 
     public static void main(String[] args) {
 
-        int id = 0, edat = 0, tipus, compra, telefon, i = 0;
+        int id = 0, edat = 0, tipus, compra = 0, telefon = 0, i = 0;
         boolean valorCorrecte = false, exit = false;
         String out = "";
         Scanner sc = new Scanner(System.in);
@@ -193,7 +193,7 @@ public class Sorteig {
                         System.out.println(MSG_7);
                     } else {
                         System.out.println("\n" + MSG_8);
-                        System.out.println(id + "   " + edat + "     " + out + "    " + compra + "    " + telefon);
+                        System.out.println(id + "   " + edat + "     " + out + "   " + compra + "      " + telefon);
                     }               
                 }
             }
