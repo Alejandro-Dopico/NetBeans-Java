@@ -15,7 +15,7 @@ import java.util.Scanner;
     Programació  
  */
 
-//Pre: Emmagatzarem dades per fer un projecte amb un màxim de 3 errors.
+///Pre: Emmagatzarem dades per fer un projecte amb un màxim de 3 errors.
 public class Sorteig {
 
     private static final String MSG_1 = "Introdueix el teu ID: ";
@@ -25,11 +25,11 @@ public class Sorteig {
     private static final String MSG_5 = "Introdueix el número de telefon: ";
     private static final String MSG_6 = "Error en dades";
     private static final String MSG_7 = "Programa finalitzat per error en dades.";
-    private static final String MSG_8 = "ID    EDAT   TIPUS         IMPORT   TELÈFON";
+    private static final String MSG_8 = "ID    EDAT  TIPUS   IMPORT   TELÈFON";
     private static final String MSG_20 = "A continuació et demanarem les teves dades i les ompliras per teclat";
-    private static final String TYPE_0 = "Venda Lliure";
-    private static final String TYPE_1 = "Pensionista";
-    private static final String TYPE_2 = "Carnet Jove";
+    private static final String TYPE_0 = "Lliure";
+    private static final String TYPE_1 = "Pension";
+    private static final String TYPE_2 = "Carnet";
     private static final String TYPE_3 = "Soci";
     private static final int MAXID = 999;
     private static final int MINID = 111;
@@ -39,6 +39,7 @@ public class Sorteig {
     private static final int MINCOMPRA = 0;
     private static final int MAXTLF = 999999999;
     private static final int MINTLF = 111111111;
+    public static final String ANSI_BLUE = "\u001B[34m";
 
     public static void main(String[] args) {
 
@@ -193,10 +194,11 @@ public class Sorteig {
                         System.out.println(MSG_7);
                     } else {
                         System.out.println("\n" + MSG_8);
-                        System.out.println(id + "   " + edat + "     " + out + "   " + compra + "      " + telefon);
+                        System.out.println(ANSI_BLUE + id + "   " + edat + "    " + out + "    " + compra + "       " + telefon + ANSI_BLUE);
                     }               
                 }
             }
         }       
     }
-}    
+}
+//Post: Printarem el resultat emmagatzemat, a més amb color blau. Si hem introduit malament 3 vegadas, el programa es finalitzarà.   
