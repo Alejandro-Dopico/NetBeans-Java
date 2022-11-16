@@ -18,8 +18,8 @@ import java.util.Scanner;
 //Pre: Transformem un megabyte a byte.
 public class Exercici_18 {
 
-    private static final String MSG_1 = "Indrodueix el primer numero: ";
-    private static final String MSG_2 = "Indrodueix el primer numero: ";
+    private static final String MSG_1 = "Indrodueix el primer número: ";
+    private static final String MSG_2 = "Indrodueix el segon número: ";
     private static final String MSG_3 = "Error, Torna a introduïr un nombre: ";
     private static final String MSG_4 = "Aquest es el primer número introduit: ";
     private static final String MSG_5 = "Aquest es el segon número introduit: ";
