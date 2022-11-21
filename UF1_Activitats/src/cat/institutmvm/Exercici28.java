@@ -25,17 +25,17 @@ public class Exercici28 {
     private static final String MSG_5 = "Pasem al seguent alumne: ";
 
     public static void main(String[] args) {
-        int[][] arrayTwo = new int[6][10];
-        int i, j, nota = 0;
         boolean valorCorrecte;
+        int[][] arrayTwo = new int[10][6];
+        int nota = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
-        for (i = 0; i < 10; i++) {
-            for (j = 0; j < arrayTwo.length; j++) {
+        for (int i = 0; i < arrayTwo.length; i++) {
+            for (int j = 0; j < arrayTwo[j].length; j++) {
                 do {
                     valorCorrecte = sc.hasNextInt();
                     if (valorCorrecte) {
-                        arrayTwo[j][i] = sc.nextInt();
+                        arrayTwo[i][j] = sc.nextInt();
                     } else {
                         sc.next();
                         System.out.println(MSG_3);
@@ -46,9 +46,9 @@ public class Exercici28 {
             System.out.println("\n" + MSG_2 + "\n");
             }
         }
-        for (i = 0; i < 10 ; i++) {
-            for (j = 0; j < arrayTwo.length; j++) {
-                nota = nota + arrayTwo[j][i];
+        for (int i = 0; i < arrayTwo.length; i++) {
+            for (int j = 0; j < arrayTwo[j].length; j++) {
+                nota = nota + arrayTwo[i][j];
             }
             System.out.println(MSG_4 + nota/6);
             nota = 0;

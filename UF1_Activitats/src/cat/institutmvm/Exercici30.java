@@ -24,13 +24,12 @@ public class Exercici30 {
     private static final String MSG_4 = "Printem la matriu tansposta";
 
     public static void main(String[] args) {
-        int[][] arrayTwo = new int[7][3];
-        int i, j;
         boolean valorCorrecte;
+        int[][] arrayTwo = new int[7][3];       
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
-        for (i = 0; i < arrayTwo.length; i++) {
-            for (j = 0; j < 3; j++) {
+        for (int i = 0; i < arrayTwo.length; i++) {
+            for (int j = 0; j < arrayTwo[j].length; j++) {
                 do {
                     valorCorrecte = sc.hasNextInt();
                     if (valorCorrecte) {
@@ -51,8 +50,8 @@ public class Exercici30 {
             }
         }
         System.out.println("\n" + MSG_4);
-        for (j = 0; j < 3; j++) {
-            for (i = 0; i < arrayTwo.length; i++) {
+        for (int j = 0; j < arrayTwo[j].length; j++) {
+            for (int i = 0; i < arrayTwo.length; i++) {
                 System.out.print(arrayTwo[i][j]);
             }
             System.out.println();
