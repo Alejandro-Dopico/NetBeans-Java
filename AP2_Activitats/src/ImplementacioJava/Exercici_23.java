@@ -29,7 +29,7 @@ public class Exercici_23 {
     private static final int MAXALU = 10;
 
     public static void main(String[] args) {
-        int num = 0, numpersona = 0;
+        int num = 0, numpersona = 0, si;
         boolean valorCorrecte, exit = false, becariBoolean = false;
         int[] arrayEdat = new int[10];
         char[] arraySexe = new char[10];
