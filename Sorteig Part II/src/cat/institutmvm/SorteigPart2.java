@@ -14,11 +14,10 @@ import java.util.Scanner;
     Disseny d'Aplicació Web (DAW)
     Programació  
  */
-
 ///Pre: Emmagatzarem dades per fer un projecte amb un màxim de 3 errors.
 public class SorteigPart2 {
 
-    private static final String MSG_1 = "Introdueix el teu ID: ";
+    private static final String MSG_1 = "Introdueix el ID: ";
     private static final String MSG_2 = "\nIntrodueix la teva edat: ";
     private static final String MSG_3 = "\nQuin tipus de venda es?\n" + "\nVenda lliure (0)" + "\nPensionista (1)" + "\nCarnet Jove (2)" + "\nSoci (3)\n";
     private static final String MSG_4 = "Indica el import de la compra: ";
@@ -46,11 +45,6 @@ public class SorteigPart2 {
         int tlf = 0, res = 0, compra = 0, telefon = 0, size = 0, numpersona = 0;
         int j = 0;
         boolean valorCorrecte = false, exit = false;
-        int[] arrayId = new int[size];
-        int[] arrayEdat = new int[size];
-        int[] arrayTipus = new int[size];
-        int[] arrayImport = new int[size];
-        int[] arrayTelefon = new int[size];
         String out = "";
         Scanner sc = new Scanner(System.in);
 
@@ -64,13 +58,21 @@ public class SorteigPart2 {
             }
         } while (!valorCorrecte);
 
+        int[] arrayId = new int[size];
+        int[] arrayEdat = new int[size];
+        int[] arrayTipus = new int[size];
+        int[] arrayImport = new int[size];
+        int[] arrayTelefon = new int[size];
+        int[] arrayTlf = new int[size];
+        int[] arrayOut = new int[size];
+
         for (int i = 0; i < size; i++) {
             System.out.println(MSG_1);
             do {
                 valorCorrecte = sc.hasNextInt();
                 if (valorCorrecte) {
                     arrayId[i] = sc.nextInt();
-                    if (arrayId[i] >= MINID && arrayId[i] <= MAXID) {
+                    if (arrayId[i] <= MAXID && arrayId[i] >= MINID) {
                         exit = true;
                     } else {
                         System.out.println("\n" + MSG_6);
@@ -89,10 +91,10 @@ public class SorteigPart2 {
                 System.out.println(MSG_7);
                 break;
             } else {
-                exit = true;
+                exit = false;
                 j = 0;
+                System.out.println(MSG_2);
                 do {
-                    System.out.println(MSG_2);
                     valorCorrecte = sc.hasNextInt();
                     if (valorCorrecte) {
                         arrayEdat[i] = sc.nextInt();
@@ -125,26 +127,26 @@ public class SorteigPart2 {
 
                                 case 0:
                                     System.out.println("Venda lliure (0)");
-                                    out = TYPE_0;
+                                    arrayOut[i] = 0;
                                     exit = true;
                                     break;
                                 case 1:
                                     System.out.println("Pensionista (1)");
-                                    out = TYPE_1;
+                                    arrayOut[i] = 1;
                                     exit = true;
                                     break;
                                 case 2:
                                     System.out.println("Carnet Jove (2)");
-                                    out = TYPE_2;
+                                    arrayOut[i] = 2;
                                     exit = true;
                                     break;
                                 case 3:
                                     System.out.println("Soci (3)");
-                                    out = TYPE_3;
+                                    arrayOut[i] = 3;
                                     exit = true;
                                     break;
                                 default:
-                                    i++;
+                                    j++;
                                     System.out.println(MSG_6);
                                     break;
                             }
@@ -159,13 +161,91 @@ public class SorteigPart2 {
                     } while (exit != true);
                     if (j == 3) {
                         System.out.println(MSG_7);
-                    } else {
-
+                    } else { //Repetim amb la mateix estructura les altres variables.
+                        j = 0;
+                        exit = false;
+                        System.out.println("\n" + MSG_4);
+                        do {
+                            valorCorrecte = sc.hasNextInt();
+                            if (valorCorrecte) {
+                                arrayImport[i] = sc.nextInt();
+                                if (arrayImport[i] >= MINCOMPRA && arrayImport[i] <= MAXCOMPRA) {
+                                    exit = true;
+                                } else {
+                                    System.out.println(MSG_6);
+                                    j++;
+                                }
+                            } else {
+                                sc.next();
+                                System.out.println(MSG_6);
+                                j++;
+                            }
+                            if (j == 3) {
+                                exit = true;
+                            }
+                        } while (exit != true);
+                        if (j == 3) {
+                            System.out.println(MSG_7);
+                        } else {
+                            j = 0;
+                            System.out.println("\n" + MSG_5);
+                            exit = false;
+                            do { //Repetim amb la mateix estructura les altres variables, amb un while més. 
+                                tlf = 0;
+                                res = 0;
+                                valorCorrecte = sc.hasNextInt();
+                                if (valorCorrecte) {
+                                    arrayTelefon[i] = sc.nextInt();
+                                    arrayTlf[i] = arrayTlf[i] + arrayTelefon[i];
+                                    while (arrayTelefon[i] != 0) { //Aquí verificarem el número de xifres que te el valor.   
+                                        arrayTelefon[i] = (arrayTelefon[i] / 10); //Dividem entre 10 per saber el número de xifres.
+                                        res = res + 1;
+                                    }
+                                    if (res == TLF) { //Si el número de xifres es 9, s'emmagatzera.
+                                        exit = true;
+                                    } else {
+                                        System.out.println(MSG_6);
+                                        j++;
+                                    }
+                                } else {
+                                    sc.next();
+                                    System.out.println(MSG_6);
+                                    j++;
+                                }
+                                if (j == 3) {
+                                    exit = true;
+                                }
+                            } while (exit != true);
+                            if (j == 3) {
+                                System.out.println(MSG_7);
+                            }
+                        }
                     }
                 }
             }
             numpersona++;
-            System.out.println(MSG_9);
+            System.out.println("\n" + MSG_9);
+        }
+        System.out.println("\nA continuació mostrem les dades:");
+        System.out.println("\n" + MSG_8);
+        for (int i = 0; i < size; i++) {
+            System.out.print(ANSI_BLUE + arrayId[i] + "\t" + arrayEdat[i] + "\t" + ANSI_BLUE);
+            switch (arrayTipus[i]) {
+
+                case 0:
+                    System.out.print(ANSI_BLUE + "Venda lliure" + ANSI_BLUE);
+                    break;
+                case 1:
+                    System.out.print(ANSI_BLUE + "Pensionista" + ANSI_BLUE);
+                    break;
+                case 2:
+                    System.out.print(ANSI_BLUE + "Carnet Jove" + ANSI_BLUE);
+                    break;
+                case 3:
+                    System.out.print(ANSI_BLUE + "Soci" + ANSI_BLUE);
+                    break;        
+            }
+            System.out.print("\t" + ANSI_BLUE + arrayImport[i] + "\t" + arrayTlf[i] + ANSI_BLUE + "\n");
         }
     }
 }

@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package cat.institutmvm;
 
@@ -15,7 +15,7 @@ import java.util.Scanner;
     Programació  
  */
 ///Pre: Crea un programa que demani un nombre per teclat i validi si aquest és natural
-public class Valida {
+public class Exercici_1 {
 
     private static final String MSG_1 = "Introdueix un número: ";
     private static final String MSG_2 = "Error:, torna'hi ";
