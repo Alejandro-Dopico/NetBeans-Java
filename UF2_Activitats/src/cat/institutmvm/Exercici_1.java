@@ -18,34 +18,34 @@ import java.util.Scanner;
 public class Exercici_1 {
 
     private static final String MSG_1 = "Introdueix un número: ";
-    private static final String MSG_2 = "Error:, torna'hi ";
+    private static final String MSG_2 = "El número es negatiu: ";
+    private static final String MSG_3 = "El es positiu: ";
 
     public static void main(String[] args) {
-        Valida method = new Valida();
-        int num1 = method.valid();
-        int num2 = method.valid();
-        int num3 = method.valid();
+        Exercici_1 method = new Exercici_1();
+        float num1 = method.valid();
         
-        System.out.println(num1+" "+ num2 +" " + num3);
     }
-
     public int valid() {
-        int num=0;
+        float num=0;
         boolean valorCorrecte; 
         Scanner sc = new Scanner(System.in);
         do {
             System.out.println(MSG_1);
-            valorCorrecte = sc.hasNextInt();
+            valorCorrecte = sc.hasNextFloat();
             if (valorCorrecte) {
-                num = sc.nextInt();
+                num = sc.nextFloat();
                 if(num < 0){
-                    System.out.println(MSG_2);
+                    System.out.println(MSG_2 + num);
+                }
+                else{
+                    System.out.println(MSG_3 + num);
                 }
             } else {
                 System.out.println(MSG_2);
                 sc.next();
             }
-        } while (!valorCorrecte || num < 1);
-        return num;
+        } while (!valorCorrecte);
+        return (int) num;
     }
 }

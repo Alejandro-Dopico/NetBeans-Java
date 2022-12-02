@@ -23,8 +23,8 @@ public class SorteigPart2 {
     private static final String MSG_4 = "Indica el import de la compra: ";
     private static final String MSG_5 = "Introdueix el número de telefon: ";
     private static final String MSG_6 = "Error en dades";
-    private static final String MSG_7 = "Programa finalitzat per error en dades.";
-    private static final String MSG_8 = "ID    EDAT  TIPUS   IMPORT    TELÈFON";
+    private static final String MSG_7 = "Programa finalitzat per error en dades.";  
+    private static final String MSG_8 = "ID        EDAT        TIPUS           IMPORT          TELÈFON";
     private static final String MSG_9 = "Seguent persona: ";
     private static final String MSG_20 = "A continuació et demanarem les teves dades i les ompliras per teclat" + "\nIntrodueix el número de clients:";
     private static final String TYPE_0 = "Lliure";
@@ -229,7 +229,7 @@ public class SorteigPart2 {
         System.out.println("\nA continuació mostrem les dades:");
         System.out.println("\n" + MSG_8);
         for (int i = 0; i < size; i++) {
-            System.out.print(ANSI_BLUE + arrayId[i] + "\t" + arrayEdat[i] + "\t" + ANSI_BLUE);
+            System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + ANSI_BLUE);
             switch (arrayTipus[i]) {
 
                 case 0:
@@ -245,7 +245,7 @@ public class SorteigPart2 {
                     System.out.print(ANSI_BLUE + "Soci" + ANSI_BLUE);
                     break;        
             }
-            System.out.print("\t" + ANSI_BLUE + arrayImport[i] + "\t" + arrayTlf[i] + ANSI_BLUE + "\n");
+            System.out.print("\t" + "   " + ANSI_BLUE + arrayImport[i] + "\t" + "    "+ arrayTlf[i] + ANSI_BLUE + "\n");
         }
     }
 }
