@@ -26,6 +26,9 @@ public class SorteigPart2 {
     private static final String MSG_7 = "Programa finalitzat per error en dades.";  
     private static final String MSG_8 = "ID        EDAT        TIPUS           IMPORT          TELÈFON";
     private static final String MSG_9 = "Seguent persona: ";
+    private static final String MSG_10 = "Vols consultar per tipus de client? (si: 1/ no:0) ";
+    private static final String MSG_11 = "Quin tipus de client? ";
+    private static final String MSG_12 = "Dades de clients de tipus ";
     private static final String MSG_20 = "A continuació et demanarem les teves dades i les ompliras per teclat" + "\nIntrodueix el número de clients:";
     private static final String TYPE_0 = "Lliure";
     private static final String TYPE_1 = "Pension";
@@ -43,7 +46,7 @@ public class SorteigPart2 {
     public static void main(String[] args) {
 
         int tlf = 0, res = 0, compra = 0, telefon = 0, size = 0, numpersona = 0;
-        int j = 0;
+        int j = 0, consultaclient = 0, tipusclient = 0;
         boolean valorCorrecte = false, exit = false;
         String out = "";
         Scanner sc = new Scanner(System.in);
@@ -243,9 +246,57 @@ public class SorteigPart2 {
                     break;
                 case 3:
                     System.out.print(ANSI_BLUE + "Soci" + ANSI_BLUE);
-                    break;        
+                    break;
             }
-            System.out.print("\t" + "   " + ANSI_BLUE + arrayImport[i] + "\t" + "    "+ arrayTlf[i] + ANSI_BLUE + "\n");
+            System.out.print("\t" + "   " + ANSI_BLUE + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE + "\n");
+        }
+        System.out.println("S'han introduït " + size + " registres de clients.");
+        System.out.println(MSG_10);
+        exit = false;
+        do {
+            System.out.print(MSG_20);
+            valorCorrecte = sc.hasNextInt();
+            if (valorCorrecte) {
+                consultaclient = sc.nextInt();
+                if (consultaclient == 1 && consultaclient == 0) {
+                    exit = true;
+                } else {
+                    System.out.println(MSG_6);
+                }
+            } else {
+                sc.next();
+                System.out.println(MSG_6);
+            }
+        } while (!valorCorrecte && exit != true);
+        if (consultaclient == 1) {
+            System.out.print(MSG_11);
+            consultaclient = sc.nextInt();
+            for (int i = 0; i < size; i++) {
+                System.out.println(MSG_12 + consultaclient);
+                if(arrayTipus[i] == consultaclient){
+                switch (arrayTipus[i]) {
+
+                    case 0:
+                        System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Venda lliure" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
+                        break;
+                    case 1:
+                        System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Pensionista" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
+                        break;
+                    case 2:
+                        System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Carnet Jove" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
+                        break;
+                    case 3:
+                        System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Soci" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
+                        break;
+                }
+                }else{
+                    System.out.println("No hi ha dades del tipus.");
+                }
+                System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + ANSI_BLUE);
+                System.out.print("\t" + "   " + ANSI_BLUE + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE + "\n");
+            }
+        } else {
+
         }
     }
 }
