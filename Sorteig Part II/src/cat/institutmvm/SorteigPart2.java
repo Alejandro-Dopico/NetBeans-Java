@@ -24,7 +24,7 @@ public class SorteigPart2 {
     private static final String MSG_5 = "Introdueix el número de telefon: ";
     private static final String MSG_6 = "Error en dades";
     private static final String MSG_7 = "Programa finalitzat per error en dades.";  
-    private static final String MSG_8 = "ID        EDAT        TIPUS           IMPORT          TELÈFON";
+    private static final String MSG_8 = "ID        EDAT        TIPUS       IMPORT    TELÈFON";
     private static final String MSG_9 = "Seguent persona: ";
     private static final String MSG_10 = "Vols consultar per tipus de client? (si: 1/ no:0) ";
     private static final String MSG_11 = "Quin tipus de client? ";
@@ -70,6 +70,7 @@ public class SorteigPart2 {
         int[] arrayOut = new int[size];
 
         for (int i = 0; i < size; i++) {
+            exit = false;
             System.out.println(MSG_1);
             do {
                 valorCorrecte = sc.hasNextInt();
@@ -250,15 +251,14 @@ public class SorteigPart2 {
             }
             System.out.print("\t" + "   " + ANSI_BLUE + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE + "\n");
         }
-        System.out.println("S'han introduït " + size + " registres de clients.");
-        System.out.println(MSG_10);
+        System.out.println("S'han introduït " + size + " registres de clients.\n");
+        System.out.print(MSG_10);
         exit = false;
         do {
-            System.out.print(MSG_20);
             valorCorrecte = sc.hasNextInt();
             if (valorCorrecte) {
                 consultaclient = sc.nextInt();
-                if (consultaclient == 1 && consultaclient == 0) {
+                if (consultaclient == 1 || consultaclient == 0) {
                     exit = true;
                 } else {
                     System.out.println(MSG_6);
@@ -271,32 +271,30 @@ public class SorteigPart2 {
         if (consultaclient == 1) {
             System.out.print(MSG_11);
             consultaclient = sc.nextInt();
+            System.out.println(MSG_12 + consultaclient);
             for (int i = 0; i < size; i++) {
-                System.out.println(MSG_12 + consultaclient);
-                if(arrayTipus[i] == consultaclient){
-                switch (arrayTipus[i]) {
+                if (arrayTipus[i] == consultaclient) {
+                    System.out.println(MSG_8);
+                    switch (arrayTipus[i]) {
 
-                    case 0:
-                        System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Venda lliure" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
-                        break;
-                    case 1:
-                        System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Pensionista" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
-                        break;
-                    case 2:
-                        System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Carnet Jove" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
-                        break;
-                    case 3:
-                        System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Soci" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
-                        break;
+                        case 0:
+                            System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Venda lliure" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
+                            break;
+                        case 1:
+                            System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Pensionista" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
+                            break;
+                        case 2:
+                            System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Carnet Jove" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
+                            break;
+                        case 3:
+                            System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + "Soci" + "\t" + "   " + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE);
+                            break;
+                    }
+                } else {
                 }
-                }else{
-                    System.out.println("No hi ha dades del tipus.");
-                }
-                System.out.print(ANSI_BLUE + arrayId[i] + "\t" + "    " + arrayEdat[i] + "\t" + "   " + ANSI_BLUE);
-                System.out.print("\t" + "   " + ANSI_BLUE + arrayImport[i] + "\t" + "    " + arrayTlf[i] + ANSI_BLUE + "\n");
             }
         } else {
-
+            System.out.println("Se acabo!");
         }
     }
 }
